@@ -25,6 +25,13 @@ function displayTasks() {
 
         if (task.completed) {
             li.classList.add("completed");
+
+            if (tasks.length > 0) {
+                 document.body.style.justifyContent = "flex-start";
+                 document.body.style.paddingTop = "60px";
+}           else {
+                 document.body.style.justifyContent = "center";
+}
         }
 
         li.innerHTML = `
@@ -42,6 +49,11 @@ function toggleTask(index) {
     localStorage.setItem("tasks", JSON.stringify(tasks));
     displayTasks();
 }
+document.getElementById("taskInput").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        addTask();
+    }
+});
 
 function deleteTask(index) {
     tasks.splice(index, 1);
