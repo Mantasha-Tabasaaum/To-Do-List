@@ -1,16 +1,9 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-    height: 100vh;
-    background: linear-gradient(135deg, #3a2c76, #2b145a);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .container {
@@ -19,13 +12,17 @@ body {
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    margin-top: 130px;
+    margin-bottom: 20px;
 }
 
+/* TITLE */
 h1 {
     color: #1f3b73;
     margin-bottom: 20px;
 }
 
+/* INPUT */
 .input-section {
     display: flex;
     background: #e0e0e0;
@@ -56,6 +53,7 @@ button:hover {
     background: #e14a38;
 }
 
+/* LIST */
 ul {
     margin-top: 20px;
     list-style: none;
@@ -66,9 +64,11 @@ li {
     padding: 12px;
     border-radius: 10px;
     margin-bottom: 10px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     transition: 0.2s;
 }
 
@@ -76,16 +76,19 @@ li:hover {
     transform: scale(1.02);
 }
 
+/* TEXT */
 li span {
     flex: 1;
     margin-left: 10px;
 }
 
+/* COMPLETED TASK */
 .completed span {
     text-decoration: line-through;
     color: gray;
 }
 
+/* DELETE BUTTON */
 .delete-btn {
     color: #555;
     cursor: pointer;
@@ -96,6 +99,7 @@ li span {
     color: red;
 }
 
+/* CIRCLE CHECK */
 .circle {
     width: 18px;
     height: 18px;
@@ -107,4 +111,42 @@ li span {
 .completed .circle {
     background: #ff5945;
     border: none;
+}
+
+/* FOOTER */
+footer {
+    margin-top: auto;   /* 🔥 pushes footer down properly */
+
+    padding: 10px 20px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+
+    color: #ddd;
+    font-size: 12px;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3a2c76, #2b145a);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   /* 🔥 default center */
+}
+
+/* spacing control */
+.container {
+    margin-top: 120px;
+}
+
+footer {
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+body.has-tasks {
+    justify-content: flex-start;
+    padding-top: 20px;   /* 👈 aur kam kar diya */
 }
